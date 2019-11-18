@@ -29,7 +29,9 @@
         <!-- password display -->
         <div class="row">
             <div class="col-12 password_display">
-                <sapn id="passwordDisplayID">Elifieriho9875#$%3469ueg#$Tgg33rge</span>
+                <!-- <span id="passwordDisplayID"></span> -->
+                <input type="text" class="passwordText" value="" id="passwordTextID">
+
             </div>
 
         </div>
@@ -126,10 +128,10 @@
                 <div class="col-lg-3 col-md-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-sm-6 mt-2 button_container">
-                            <button type="button" class="btn btn-info" id="copyButtonID">Copy To Clipboard</button>
+                            <button type="button" class="btn btn-info" id="copyButtonID" onclick="copyToClipboard()">Copy To Clipboard</button>
                         </div>
                         <div class="col-lg-12 col-md-6 col-sm-6 mt-2 button_container">
-                            <button type="button" class="btn btn-primary" id="generateButtonID">Generate Password</button>
+                            <button type="button" class="btn btn-primary" id="generateButtonID" onclick="generatePassword()">Generate Password</button>
                         </div>
 
                     </div>

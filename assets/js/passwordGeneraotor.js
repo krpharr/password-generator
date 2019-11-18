@@ -70,19 +70,42 @@ function generatePassword() {
         password = password.concat(c);
 
     }
-    passwordDisplay.innerHTML = password;
+    // passwordDisplay.innerHTML = password;
     console.log(password);
+    document.getElementById("passwordTextID").value = password;
 
 }
 
+function numChecked() {
+    var n = 0;
+    if (document.getElementById("lowercaseCheckID").checked) {
+        n++;
+    }
+    if (document.getElementById("uppercaseCheckID").checked) {
+        n++;
+    }
+    if (document.getElementById("numbersCheckID").checked) {
+        n++;
+    }
+    if (document.getElementById("specialCheckID").checked) {
+        n++;
+    }
+    return n;
+}
 
 function CheckOnClick(checkID, sliderID) {
     var checkBox = document.getElementById(checkID);
     var slider = document.getElementById(sliderID);
+    var oldval = slider.value;
     if (checkBox.checked === true) {
         slider.value = 100;
     } else {
         slider.value = 0;
+    }
+    if (numChecked() === 0) {
+        checkBox.checked = true;
+        slider.value = oldval;
+        return;
     }
     generatePassword();
     log();
@@ -99,6 +122,16 @@ function SliderOnClick(sliderID, checkID) {
     generatePassword();
     log();
 }
+
+function copyToClipboard() {
+    var copyText = document.getElementById("passwordTextID");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+
+}
+
 
 function chooseWithChance(args) {
     // takes in array of percentages and returns an index 

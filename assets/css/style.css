@@ -29,6 +29,12 @@ p {
     text-align: center;
 }
 
+.passwordText {
+    /* display: inline; */
+    text-align: center;
+    width: 100%;
+}
+
 .password_length_slider {
     width: 100%;
     text-align: center;

@@ -11,6 +11,7 @@ h3,
 h4,
 h5 {
     font-family: 'Ubuntu', "Helvetica Neue", sans-serif;
+    font-weight: 600;
     margin: 0;
     padding: 0;
 }
@@ -19,14 +20,36 @@ p {
     font-family: 'Source Code Pro', monospace;
 }
 
+.app_container {
+    margin-top: 40px;
+    padding-bottom: 60px;
+    border-radius: 4px;
+    background-color: black;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
+}
+
+.app_container:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
 .header {
     text-align: center;
+    border-radius: 4px 4px 0 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100 */
+    background: #a90329;
+    background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+    background: -webkit-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+    background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=0);
 }
 
 .password_display {
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 2rem;
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 .passwordText {

@@ -30,5 +30,10 @@ p {
 }
 
 .password_length_slider {
+    width: 100%;
     text-align: center;
+}
+
+#passwordSlider .slider-selection {
+    background: #BABABA;
 }

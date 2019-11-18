@@ -51,7 +51,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="lowercaseCheckID">
+                                        <input class="form-check-input" type="checkbox" value="" id="lowercaseCheckID" onclick="CheckOnClick('lowercaseCheckID', 'lowercaseSliderID')">
                                         <label class="form-check-label" for="lowercaseCheckID">
                                                 Lowercase
                                         </label>
@@ -59,7 +59,7 @@
 
                                 </div>
                                 <div class="col-6">
-                                    <input type="range" class="weights_slider" min="0" max="100" step="1" id="lowercaseSliderID" value="100">
+                                    <input type="range" class="weights_slider" min="0" max="100" step="1" id="lowercaseSliderID" value="0" onclick="SliderOnClick('lowercaseSliderID', 'lowercaseCheckID')">
 
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="uppercaseCheckID">
+                                        <input class="form-check-input" type="checkbox" value="" id="uppercaseCheckID" onclick="CheckOnClick('uppercaseCheckID', 'uppercaseSliderID')">
                                         <label class="form-check-label" for="uppercaseCheckID">
                                                     Lowercase
                                             </label>
@@ -76,7 +76,7 @@
 
                                 </div>
                                 <div class="col-6">
-                                    <input type="range" class="weights_slider" min="0" max="100" step="1" id="uppercaseSliderID" value="0">
+                                    <input type="range" class="weights_slider" min="0" max="100" step="1" id="uppercaseSliderID" value="0" onclick="SliderOnClick('uppercaseSliderID', 'uppercaseCheckID')">
 
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="numbersCheckID">
+                                        <input class="form-check-input" type="checkbox" value="" id="numbersCheckID" onclick="CheckOnClick('numbersCheckID', 'numbersSliderID')">
                                         <label class="form-check-label" for="numbersCheckID">
                                                             Numbers
                                                     </label>
@@ -98,7 +98,7 @@
 
                                 </div>
                                 <div class="col-6">
-                                    <input type="range" class="weights_slider" min="0" max="100" step="1" id="numbersSliderID" value="0">
+                                    <input type="range" class="weights_slider" min="0" max="100" step="1" id="numbersSliderID" value="0" onclick="SliderOnClick('numbersSliderID', 'numbersCheckID')">
 
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="specialCheckID">
+                                        <input class="form-check-input" type="checkbox" value="" id="specialCheckID" onclick="CheckOnClick('specialCheckID', 'specialSliderID')">
                                         <label class="form-check-label" for="specialCheckID">
                                                             Special Characters
                                                     </label>
@@ -115,7 +115,7 @@
 
                                 </div>
                                 <div class="col-6">
-                                    <input type="range" class="weights_slider" min="0" max="100" step="1" id="specialSliderID" value="0">
+                                    <input type="range" class="weights_slider" min="0" max="100" step="1" id="specialSliderID" value="0" onclick="SliderOnClick('specialSliderID', 'specialCheckID')">
 
                                 </div>
                             </div>
@@ -126,10 +126,10 @@
                 <div class="col-lg-3 col-md-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-sm-6 mt-2 button_container">
-                            <button type="button" class="btn btn-info">Copy To Clipboard</button>
+                            <button type="button" class="btn btn-info" id="copyButtonID">Copy To Clipboard</button>
                         </div>
                         <div class="col-lg-12 col-md-6 col-sm-6 mt-2 button_container">
-                            <button type="button" class="btn btn-primary">Generate Password</button>
+                            <button type="button" class="btn btn-primary" id="generateButtonID">Generate Password</button>
                         </div>
 
                     </div>

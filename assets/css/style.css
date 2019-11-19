@@ -57,6 +57,10 @@ p {
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=0);
 }
 
+.btn:hover {
+    color: #a7b0b8;
+}
+
 .password_display {
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 2rem;

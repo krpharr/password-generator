@@ -73,7 +73,15 @@ function generatePassword() {
     // passwordDisplay.innerHTML = password;
     console.log(password);
     document.getElementById("passwordTextID").value = password;
+    document.getElementById("passwordDisplayID").innerHTML = password;
     document.getElementById("passwordLengthID").innerHTML = passwordLength.value;
+
+    // var w = parseInt(passwordDisplay.style.width);
+    var w = passwordDisplay.style.width;
+    var s = 128 / passwordLength.value;
+    console.log("passwordDisplay width: " + w);
+    console.log(s);
+    passwordDisplay.style.fontSize = s + "rem";
 
 }
 

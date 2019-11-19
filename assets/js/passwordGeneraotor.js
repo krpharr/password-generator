@@ -31,7 +31,7 @@ function log() {
 function init() {
     lowercaseCheck.checked = "checked";
     lowercaseWeight.value = "100";
-    passwordLength.value = "32";
+    passwordLength.value = "8";
     generatePassword();
 }
 
@@ -73,6 +73,7 @@ function generatePassword() {
     // passwordDisplay.innerHTML = password;
     console.log(password);
     document.getElementById("passwordTextID").value = password;
+    document.getElementById("passwordLengthID").innerHTML = passwordLength.value;
 
 }
 

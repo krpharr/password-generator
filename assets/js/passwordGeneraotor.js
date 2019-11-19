@@ -76,12 +76,30 @@ function generatePassword() {
     document.getElementById("passwordDisplayID").innerHTML = password;
     document.getElementById("passwordLengthID").innerHTML = passwordLength.value;
 
-    // var w = parseInt(passwordDisplay.style.width);
+
+    //reset background to invisible 
+    passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
+
     var w = passwordDisplay.style.width;
-    var s = 128 / passwordLength.value;
-    console.log("passwordDisplay width: " + w);
-    console.log(s);
-    passwordDisplay.style.fontSize = s + "rem";
+    var s;
+    if (passwordLength.value < 128) {
+        s = "2rem";
+    }
+
+    if (passwordLength.value < 64) {
+        s = "3rem";
+    }
+    if (passwordLength.value < 48) {
+        s = "4rem";
+    }
+    if (passwordLength.value < 32) {
+        s = "6rem";
+    }
+    // if (passwordLength.value < 16) {
+    //     s = "12rem";
+    // }
+
+    passwordDisplay.style.fontSize = s;
 
 }
 
@@ -100,6 +118,11 @@ function numChecked() {
         n++;
     }
     return n;
+}
+
+function passwordDisplayOnClick() {
+    passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
+
 }
 
 function CheckOnClick(checkID, sliderID) {
@@ -138,7 +161,7 @@ function copyToClipboard() {
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
     // alert("Copied the text: " + copyText.value);
-
+    passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.5)"
 }
 
 

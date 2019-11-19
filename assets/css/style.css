@@ -1,4 +1,6 @@
-html {}
+* {
+    border: 1px red solid;
+}
 
 body {
     background-color: #343a40;
@@ -119,6 +121,10 @@ p {
     }
     .password_display {
         font-size: 2rem!important;
+    }
+    .btn {
+        width: 100%;
+        margin-bottom: 8px;
     }
 }
 

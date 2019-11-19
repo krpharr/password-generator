@@ -50,16 +50,24 @@ function generatePassword() {
         var s = "";
         switch (chooseWithChance(charWeightsArray)) {
             case 0:
-                s = lower;
+                if (charWeightsArray[0] > 0) {
+                    s = lower;
+                }
                 break;
             case 1:
-                s = upper;
+                if (charWeightsArray[1] > 0) {
+                    s = upper
+                }
                 break;
             case 2:
-                s = numbers;
+                if (charWeightsArray[2] > 0) {
+                    s = numbers;
+                }
                 break;
             case 3:
-                s = special;
+                if (charWeightsArray[3] > 0) {
+                    s = special;
+                }
                 break;
         }
 
@@ -85,7 +93,6 @@ function generatePassword() {
     if (passwordLength.value < 128) {
         s = "2rem";
     }
-
     if (passwordLength.value < 64) {
         s = "3rem";
     }
@@ -164,16 +171,20 @@ function copyToClipboard() {
     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.5)"
 }
 
+function totalSum(total, num) {
+    return total + num;
+}
 
 function chooseWithChance(args) {
     // takes in array of percentages and returns an index 
     // based on weight of those percentages
 
     var argCount = args.length;
-    var sumOfChances = 0;
-    for (var i = 0; i < argCount; i++) {
-        sumOfChances = sumOfChances + args[i];
-    }
+    var sumOfChances = args.reduce(totalSum);
+
+    // for (var i = 0; i < argCount; i++) {
+    //     sumOfChances = sumOfChances + args[i];
+    // }
 
     console.log("argCount\t " + argCount);
     console.log("sumOfChances\t " + sumOfChances);

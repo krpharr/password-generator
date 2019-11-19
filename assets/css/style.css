@@ -68,6 +68,18 @@ p {
     background-color: rgb(127, 246, 255, 0.5);
 }
 
+.right_icon {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.left_icon {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
+
 .password_display {
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 2rem;

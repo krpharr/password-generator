@@ -108,6 +108,10 @@ function generatePassword() {
 
     passwordDisplay.style.fontSize = s;
 
+    // redraw to rid of artifacts in passwordDisplay
+    document.getElementById("app_containerID").style.display = "none";
+    document.getElementById("app_containerID").style.display = "block";
+
 }
 
 function numChecked() {

@@ -24,10 +24,10 @@
                 <div class="row">
                     <div class="col-12 pt-5 pb-5 header red_gradient">
                         <div class="fa-2x">
-                            <i class="fas fa-sync-alt right_icon" id="generatePasswordIconID"></i>
-                            <i class="fas fa-sync-alt  right_icon" id="spin_generatePasswordIconID" hidden="true"></i>
-                            <i class="far fa-clipboard  left_icon" id="far_clipboardIconID"></i>
-                            <i class="fas fa-clipboard left_icon" id="fas_clipboardIconID" hidden="true"></i>
+                            <i class="fas fa-sync-alt right_icon" id="generatePasswordIconID" onclick="spinGeneratePasswordIcon()"></i>
+                            <i class="fas fa-sync-alt  fa-spin right_icon" id="spin_generatePasswordIconID"></i>
+                            <i class="far fa-clipboard  left_icon" id="far_clipboardIconID" onclick="copyToClipboard()"></i>
+                            <i class="fas fa-clipboard left_icon" id="fas_clipboardIconID"></i>
                         </div>
                         <h1>Password Generator</h1>
                     </div>
@@ -158,7 +158,7 @@
                                     <button type="button" class="btn red_gradient" id="copyButtonID" onclick="copyToClipboard()">Copy To Clipboard</button>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 mt-2 button_container">
-                                    <button type="button" class="btn red_gradient" id="generateButtonID" onclick="generatePassword()">Generate Password</button>
+                                    <button type="button" class="btn red_gradient" id="generateButtonID" onclick="spinGeneratePasswordIcon()">Generate Password</button>
                                 </div>
 
                             </div>

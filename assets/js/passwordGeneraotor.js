@@ -33,6 +33,10 @@ function init() {
     lowercaseWeight.value = "100";
     passwordLength.value = "8";
     generatePassword();
+    document.getElementById("generatePasswordIconID").style.display = "block";
+    document.getElementById("spin_generatePasswordIconID").style.display = "none";
+    deselectClipboardIcon();
+
 }
 
 passwordLength.oninput = function() {
@@ -40,6 +44,8 @@ passwordLength.oninput = function() {
 }
 
 function generatePassword() {
+    // spinGeneratePasswordIcon();
+    deselectClipboardIcon();
     password = "";
     var charWeightsArray = [parseInt(lowercaseWeight.value), parseInt(uppercaseWeight.value),
         parseInt(numbersWeight.value), parseInt(specialWeight.value)
@@ -114,6 +120,34 @@ function generatePassword() {
 
 }
 
+function spinGeneratePasswordIcon() {
+
+    document.getElementById("generatePasswordIconID").style.display = "none";
+
+    document.getElementById("spin_generatePasswordIconID").style.display = "block";
+
+    setTimeout(function() {
+        document.getElementById("generatePasswordIconID").style.display = "block";
+        document.getElementById("spin_generatePasswordIconID").style.display = "none";
+        generatePassword();
+    }, 800);
+
+}
+
+function selectClipboardIcon() {
+    document.getElementById("far_clipboardIconID").style.display = "none";
+
+    document.getElementById("fas_clipboardIconID").style.display = "block";
+
+}
+
+function deselectClipboardIcon() {
+    document.getElementById("far_clipboardIconID").style.display = "block";
+
+    document.getElementById("fas_clipboardIconID").style.display = "none";
+
+}
+
 function numChecked() {
     var n = 0;
     if (document.getElementById("lowercaseCheckID").checked) {
@@ -173,6 +207,7 @@ function copyToClipboard() {
     document.execCommand("copy");
     // alert("Copied the text: " + copyText.value);
     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.5)"
+    selectClipboardIcon();
 }
 
 function totalSum(total, num) {

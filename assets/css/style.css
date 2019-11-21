@@ -141,6 +141,9 @@ p {
     body {
         margin: 0 8px;
     }
+    h1 {
+        font-size: 1rem;
+    }
     .app_container {
         margin-top: 4px;
     }

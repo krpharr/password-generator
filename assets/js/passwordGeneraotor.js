@@ -208,12 +208,20 @@ function SliderOnClick(sliderID, checkID) {
     log();
 }
 
+
 function copyToClipboard() {
-    var copyText = document.getElementById("passwordTextID");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999)
-    document.execCommand("copy");
-    // alert("Copied the text: " + copyText.value);
+
+    const el = document.createElement('textarea');
+    el.value = password;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    el.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.5)"
     selectClipboardIcon();
 }

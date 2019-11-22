@@ -89,12 +89,10 @@ function generatePassword() {
     document.getElementById("passwordDisplayID").innerHTML = password;
     document.getElementById("passwordLengthID").innerHTML = passwordLength.value;
 
-
     //reset background to invisible 
     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
 
     var s;
-
     if (passwordLength.value < 128) {
         s = "32px";
     }
@@ -104,41 +102,31 @@ function generatePassword() {
     if (passwordLength.value < 17) {
         s = "96px";
     }
-
     passwordDisplay.style.fontSize = s;
 
     // redraw to rid of artifacts in passwordDisplay ? works? maybe? 
     document.getElementById("app_containerID").style.display = "none";
     document.getElementById("app_containerID").style.display = "block";
-
 }
 
 function spinGeneratePasswordIcon() {
-
     document.getElementById("generatePasswordIconID").style.display = "none";
-
     document.getElementById("spin_generatePasswordIconID").style.display = "block";
-
     setTimeout(function() {
         document.getElementById("generatePasswordIconID").style.display = "block";
         document.getElementById("spin_generatePasswordIconID").style.display = "none";
         generatePassword();
     }, 800);
-
 }
 
 function selectClipboardIcon() {
     document.getElementById("far_clipboardIconID").style.display = "none";
-
     document.getElementById("fas_clipboardIconID").style.display = "block";
-
 }
 
 function deselectClipboardIcon() {
     document.getElementById("far_clipboardIconID").style.display = "block";
-
     document.getElementById("fas_clipboardIconID").style.display = "none";
-
 }
 
 function numChecked() {

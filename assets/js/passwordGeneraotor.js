@@ -20,8 +20,6 @@ var specialWeight = document.getElementById("specialSliderID");
 var passwordDisplayHeight = document.getElementById("password_display_ID").offsetHeight;
 var passwordDisplayWidth = document.getElementById("password_display_ID").offsetWidth;
 
-
-
 function log() {
     console.log("********************");
     console.log("Password\t " + password);
@@ -45,18 +43,18 @@ function init() {
 
 }
 
+
 passwordLength.oninput = function() {
+    // generate a new password when password length slider is adjusted
     generatePassword();
 }
 
 function generatePassword() {
-    // spinGeneratePasswordIcon();
     deselectClipboardIcon();
     password = "";
     var charWeightsArray = [parseInt(lowercaseWeight.value), parseInt(uppercaseWeight.value),
         parseInt(numbersWeight.value), parseInt(specialWeight.value)
     ];
-    console.log(charWeightsArray);
 
     for (var i = 0; i < passwordLength.value; i++) {
         var s = "";
@@ -83,15 +81,10 @@ function generatePassword() {
                 break;
         }
 
-        console.log(s);
-
         var c = s.charAt(Math.floor(Math.random() * s.length));
-        console.log("Random Char: " + c);
         password = password.concat(c);
 
     }
-    // passwordDisplay.innerHTML = password;
-    console.log(password);
     document.getElementById("passwordTextID").value = password;
     document.getElementById("passwordDisplayID").innerHTML = password;
     document.getElementById("passwordLengthID").innerHTML = passwordLength.value;
@@ -100,16 +93,8 @@ function generatePassword() {
     //reset background to invisible 
     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
 
-    log();
-
-
     var s;
-    // if (passwordLength.value < 128) {
-    //     s = "2rem";
-    // }
-    // if (passwordLength.value < 120) {
-    //     s = "3rem";
-    // }
+
     if (passwordLength.value < 128) {
         s = "32px";
     }
@@ -122,7 +107,7 @@ function generatePassword() {
 
     passwordDisplay.style.fontSize = s;
 
-    // redraw to rid of artifacts in passwordDisplay
+    // redraw to rid of artifacts in passwordDisplay ? works? maybe? 
     document.getElementById("app_containerID").style.display = "none";
     document.getElementById("app_containerID").style.display = "block";
 
@@ -174,6 +159,7 @@ function numChecked() {
 }
 
 function passwordDisplayOnClick() {
+    //does not work on phone!?
     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
 
 }
@@ -208,9 +194,7 @@ function SliderOnClick(sliderID, checkID) {
     log();
 }
 
-
 function copyToClipboard() {
-
     const el = document.createElement('textarea');
     el.value = password;
     el.setAttribute('readonly', '');
@@ -221,11 +205,11 @@ function copyToClipboard() {
     el.setSelectionRange(0, 99999);
     document.execCommand('copy');
     document.body.removeChild(el);
-
     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.5)"
     selectClipboardIcon();
 }
 
+// helper function
 function totalSum(total, num) {
     return total + num;
 }
@@ -233,18 +217,10 @@ function totalSum(total, num) {
 function chooseWithChance(args) {
     // takes in array of percentages and returns an index 
     // based on weight of those percentages
-
     var argCount = args.length;
     var sumOfChances = args.reduce(totalSum);
-
-    // for (var i = 0; i < argCount; i++) {
-    //     sumOfChances = sumOfChances + args[i];
-    // }
-
     console.log("argCount\t " + argCount);
     console.log("sumOfChances\t " + sumOfChances);
-
-
     var r = Math.floor(Math.random() * sumOfChances);
     console.log("r\t " + r);
     console.log("minus args[argCount - 1]\t " + args[argCount - 1])
@@ -259,4 +235,5 @@ function chooseWithChance(args) {
     return argCount - 1;
 }
 
+// set to defaults at startup
 init();

@@ -12,10 +12,9 @@ Simple web application to quickly create a password from 8 to 128 characters usi
 * Generate Password button and spin-icon button generate new password with current selections.
 * Copy to Clipboard and cliboard-icon button copies current password to the users clipboard.
 
-
 ## Credits
 
-This projoct uses: 
+This project uses: 
 * Bootstrap https://getbootstrap.com/
 * Icons from Font Awesome https://fontawesome.com/
 * Fonts from https://fonts.google.com/

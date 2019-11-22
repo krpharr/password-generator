@@ -101,6 +101,7 @@ p {
 .password_display {
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 2rem;
+    line-height: 1;
     text-align: center;
     padding: 0 16px;
     margin: 16px 0 0;
@@ -149,6 +150,9 @@ p {
     }
     .password_display {
         font-size: 2rem!important;
+        margin-top: 8px;
+        height: 200px;
+        padding: 0 4px;
     }
     .btn {
         width: 100%;

@@ -17,6 +17,10 @@ var numbersWeight = document.getElementById("numbersSliderID");
 var specialCheck = document.getElementById("specialCheckID");
 var specialWeight = document.getElementById("specialSliderID");
 
+var passwordDisplayHeight = document.getElementById("password_display_ID").offsetHeight;
+var passwordDisplayWidth = document.getElementById("password_display_ID").offsetWidth;
+
+
 
 function log() {
     console.log("********************");
@@ -26,6 +30,8 @@ function log() {
     console.log("Upper\t " + uppercaseWeight.value);
     console.log("Numbers\t " + numbersWeight.value);
     console.log("Special\t " + specialWeight.value);
+    console.log("passwordDisplay height: " + passwordDisplayHeight);
+    console.log("passwordDisplay width: " + passwordDisplayWidth);
 }
 
 function init() {
@@ -94,23 +100,25 @@ function generatePassword() {
     //reset background to invisible 
     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
 
-    var w = passwordDisplay.style.width;
+    log();
+
+
     var s;
-    if (passwordLength.value < 128) {
-        s = "2rem";
-    }
-    if (passwordLength.value < 64) {
-        s = "3rem";
-    }
-    if (passwordLength.value < 48) {
-        s = "4rem";
-    }
-    if (passwordLength.value < 32) {
-        s = "6rem";
-    }
-    // if (passwordLength.value < 16) {
-    //     s = "12rem";
+    // if (passwordLength.value < 128) {
+    //     s = "2rem";
     // }
+    // if (passwordLength.value < 120) {
+    //     s = "3rem";
+    // }
+    if (passwordLength.value < 128) {
+        s = "32px";
+    }
+    if (passwordLength.value < 69) {
+        s = "48px";
+    }
+    if (passwordLength.value < 17) {
+        s = "96px";
+    }
 
     passwordDisplay.style.fontSize = s;
 

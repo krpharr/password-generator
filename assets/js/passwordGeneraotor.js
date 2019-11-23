@@ -29,8 +29,6 @@ function log() {
     console.log("Upper\t " + uppercaseWeight.value);
     console.log("Numbers\t " + numbersWeight.value);
     console.log("Special\t " + specialWeight.value);
-    console.log("passwordDisplay height: " + passwordDisplayHeight);
-    console.log("passwordDisplay width: " + passwordDisplayWidth);
 }
 
 function init() {

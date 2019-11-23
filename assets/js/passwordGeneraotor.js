@@ -1,12 +1,13 @@
 var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
-var special = "`~!@#$%^&*()_+-{}[];':,.?";
+var special = "`~!@#$%^&*()_+{}[];':,.?-";
 
 var charWeightsArray = [100, 0, 0, 0];
 var password = "";
 
-var passwordDisplay = document.getElementById("passwordDisplayID");
+// var passwordDisplay = document.getElementById("passwordDisplayID");
+var passwordText = document.getElementById("passwordTextID");
 var passwordLength = document.getElementById("passwordSliderID");
 var lowercaseCheck = document.getElementById("lowercaseCheckID");
 var lowercaseWeight = document.getElementById("lowercaseSliderID");
@@ -17,8 +18,8 @@ var numbersWeight = document.getElementById("numbersSliderID");
 var specialCheck = document.getElementById("specialCheckID");
 var specialWeight = document.getElementById("specialSliderID");
 
-var passwordDisplayHeight = document.getElementById("password_display_ID").offsetHeight;
-var passwordDisplayWidth = document.getElementById("password_display_ID").offsetWidth;
+// var passwordDisplayHeight = document.getElementById("password_display_ID").offsetHeight;
+// var passwordDisplayWidth = document.getElementById("password_display_ID").offsetWidth;
 
 function log() {
     console.log("********************");
@@ -33,6 +34,7 @@ function log() {
 }
 
 function init() {
+    hideSpinIcon();
     lowercaseCheck.checked = "checked";
     lowercaseWeight.value = "100";
     passwordLength.value = "8";
@@ -88,32 +90,32 @@ function generatePassword() {
     }
     password = encodeURI(password);
     document.getElementById("passwordTextID").value = password;
-    document.getElementById("passwordDisplayID").innerHTML = password;
+    // document.getElementById("passwordDisplayID").innerHTML = password;
     document.getElementById("passwordLengthID").innerHTML = passwordLength.value;
 
     //reset background to invisible 
-    passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
+    // passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
 
-    var s;
-    if (passwordLength.value < 128) {
-        s = "1.12em";
-    }
+    // var s;
+    // if (passwordLength.value < 128) {
+    //     s = "1.12em";
+    // }
 
-    if (passwordLength.value < 107) {
-        s = "1.25em";
-    }
+    // if (passwordLength.value < 107) {
+    //     s = "1.25em";
+    // }
 
-    if (passwordLength.value < 55) {
-        s = "1.75em";
-    }
+    // if (passwordLength.value < 55) {
+    //     s = "1.75em";
+    // }
 
-    if (passwordLength.value < 27) {
-        s = "2.5em";
-    }
-    if (passwordLength.value < 9) {
-        s = "4em";
-    }
-    passwordDisplay.style.fontSize = s;
+    // if (passwordLength.value < 27) {
+    //     s = "2.5em";
+    // }
+    // if (passwordLength.value < 9) {
+    //     s = "4em";
+    // }
+    // passwordDisplay.style.fontSize = s;
 
     // redraw to rid of artifacts in passwordDisplay ? works? maybe? 
     document.getElementById("app_containerID").style.display = "none";
@@ -124,10 +126,15 @@ function spinGeneratePasswordIcon() {
     document.getElementById("generatePasswordIconID").style.display = "none";
     document.getElementById("spin_generatePasswordIconID").style.display = "block";
     setTimeout(function() {
-        document.getElementById("generatePasswordIconID").style.display = "block";
-        document.getElementById("spin_generatePasswordIconID").style.display = "none";
+        hideSpinIcon();
         generatePassword();
     }, 800);
+}
+
+function hideSpinIcon() {
+    document.getElementById("generatePasswordIconID").style.display = "block";
+    document.getElementById("spin_generatePasswordIconID").style.display = "none";
+
 }
 
 function selectClipboardIcon() {
@@ -157,11 +164,11 @@ function numChecked() {
     return n;
 }
 
-function passwordDisplayOnClick() {
-    //does not work on phone!?
-    passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
+// function passwordDisplayOnClick() {
+//     //does not work on phone!?
+//     passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.0)";
 
-}
+// }
 
 function CheckOnClick(checkID, sliderID) {
     var checkBox = document.getElementById(checkID);
@@ -194,17 +201,17 @@ function SliderOnClick(sliderID, checkID) {
 }
 
 function copyToClipboard() {
-    const el = document.createElement('textarea');
-    el.value = password;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    el.select();
-    el.setSelectionRange(0, 99999);
+    // const el = document.createElement('textarea');
+    // el.value = password;
+    // el.setAttribute('readonly', '');
+    // el.style.position = 'absolute';
+    // el.style.left = '-9999px';
+    // document.body.appendChild(el);
+    passwordText.select();
+    passwordText.setSelectionRange(0, 99999);
     document.execCommand('copy');
-    document.body.removeChild(el);
-    passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.5)"
+    // document.body.removeChild(el);
+    // passwordDisplay.style.backgroundColor = "rgb(127, 246, 255, 0.5)"
     selectClipboardIcon();
 }
 

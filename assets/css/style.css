@@ -95,7 +95,7 @@ p {
 
 .password_display {
     font-family: 'Libre Barcode 128 Text', cursive;
-    font-size: 2rem;
+    font-size: 39px;
     line-height: 1;
     text-align: center;
     padding: 0 16px;
@@ -121,6 +121,10 @@ p {
     background: #BABABA;
 }
 
+.passwordLengthDisplay {
+    text-align: left!important;
+}
+
 .weights_slider {
     width: 100%;
 }
@@ -143,7 +147,7 @@ p {
         margin-top: 4px;
     }
     .password_display {
-        font-size: 2rem!important;
+        /* font-size: 2rem!important; */
         margin-top: 8px;
         height: 200px;
         padding: 24px 4px;
@@ -151,5 +155,8 @@ p {
     .btn {
         width: 100%;
         margin-bottom: 8px;
+    }
+    .passwordLengthDisplay {
+        text-align: center!important;
     }
 }

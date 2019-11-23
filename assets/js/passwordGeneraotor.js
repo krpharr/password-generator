@@ -94,13 +94,22 @@ function generatePassword() {
 
     var s;
     if (passwordLength.value < 128) {
-        s = "32px";
+        s = "1.12em";
     }
-    if (passwordLength.value < 69) {
-        s = "48px";
+
+    if (passwordLength.value < 107) {
+        s = "1.25em";
     }
-    if (passwordLength.value < 17) {
-        s = "96px";
+
+    if (passwordLength.value < 55) {
+        s = "1.75em";
+    }
+
+    if (passwordLength.value < 27) {
+        s = "2.5em";
+    }
+    if (passwordLength.value < 9) {
+        s = "4em";
     }
     passwordDisplay.style.fontSize = s;
 

@@ -144,7 +144,7 @@ p {
         margin-top: 4px;
     }
     .password_display {
-        font-size: 2rem!important;
+        /* font-size: 2rem!important; */
         margin-top: 8px;
         height: 200px;
         padding: 24px 4px;

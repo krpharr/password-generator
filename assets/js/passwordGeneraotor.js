@@ -84,7 +84,9 @@ function generatePassword() {
         var c = s.charAt(Math.floor(Math.random() * s.length));
         password = password.concat(c);
 
+
     }
+    password = encodeURI(password);
     document.getElementById("passwordTextID").value = password;
     document.getElementById("passwordDisplayID").innerHTML = password;
     document.getElementById("passwordLengthID").innerHTML = passwordLength.value;

@@ -101,7 +101,7 @@ p {
     padding: 0 16px;
     margin: 16px 0 0;
     height: 100px;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 .passwordText {
@@ -149,7 +149,7 @@ p {
     .password_display {
         /* font-size: 2rem!important; */
         margin-top: 8px;
-        height: 200px;
+        height: 250px;
         padding: 24px 4px;
     }
     .btn {
@@ -160,3 +160,10 @@ p {
         text-align: center!important;
     }
 }
+
+
+/* @media only screen and (max-width: 991px) {
+    .password_display {
+        height: 210px;
+    }
+} */
